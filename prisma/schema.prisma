@@ -16,3 +16,26 @@ model Todo {
   text      String
   completed Boolean
 }
+
+model Dizimista {
+  id            Int      @id @unique @default(autoincrement())
+  nome          String
+  dt_nascimento DateTime
+  sexo          String
+  telefone      String?
+  celular       String?
+  email         String?
+  ativo         Boolean  @default(true)
+  lougradouro   String?
+  numero        String?
+  complemento   String?
+  bairro        String?
+  cidade        String?
+  cep           String?
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  controle      Int?
+  observacao    String?
+
+  @@map("dizimistas")
+}
